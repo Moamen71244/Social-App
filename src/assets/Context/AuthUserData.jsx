@@ -5,9 +5,7 @@ export const userDataContext = createContext()
 export default function AuthUserData({children}) {
     
     
-    const [userData, setUserData] = useState(function(){
-        return JSON.parse(localStorage.getItem("userdata"))
-    })
+    const [userData, setUserData] = useState(null)
     function setAuthUserData (){
         getUserData()
     }
@@ -19,11 +17,8 @@ export default function AuthUserData({children}) {
                 token: localStorage.getItem("token")
             }
         })
-        localStorage.removeItem("userdata")
-        localStorage.setItem("userdata",JSON.stringify(res.data.data.user))
         setUserData(res.data.data.user)
-        
-       
+    
        }
        
 

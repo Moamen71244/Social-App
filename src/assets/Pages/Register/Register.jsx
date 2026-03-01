@@ -27,7 +27,7 @@ const RegisterSchema = zod.object({
 
 export default function Register() {
   const [isloading, setisloading] = useState(false)
-  // const { setAuthUserData } = useContext(userDataContext)
+  const { setAuthUserData } = useContext(userDataContext)
   const navigate = useNavigate()
 
   const { handleSubmit, register, formState: { errors } } = useForm({
@@ -55,10 +55,9 @@ export default function Register() {
         pending: "Creating account...",
         success: {
           render({ data }) {
-            console.log(data);
             localStorage.clear()
-            localStorage.setItem("userdata", JSON.stringify(data.data.data.user))
             localStorage.setItem("token",data.data.data.token)
+            setAuthUserData()
             setTimeout(() => {
               navigate("/");
             }, 1500);

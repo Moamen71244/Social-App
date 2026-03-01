@@ -11,7 +11,6 @@ import AppNavbar from "../Components/Navbar/AppNavbar";
 import Profile from "../Pages/Profile/Profile";
 import PostDetails from "../Pages/postDetails/postDetails";
 import Home from "../Pages/Home/Home";
-import { User } from "lucide-react";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 export const myRouter = createBrowserRouter([
     {path:"",element:<Layout />,children :[
