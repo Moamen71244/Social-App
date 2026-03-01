@@ -26,5 +26,3 @@ createRoot(document.getElementById('root')).render(
      </QueryClientProvider>
   </StrictMode>,
 )
-
-console.log(import.meta.env.VITE_BASE_URL)

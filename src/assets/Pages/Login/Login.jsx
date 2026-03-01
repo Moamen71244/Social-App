@@ -9,7 +9,6 @@ import { Bounce, toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../../Context/AuthContext";
 import { userDataContext } from "../../Context/AuthUserData";
 import { Sms, Lock1 } from "iconsax-reactjs";
-import { axiosInterseptor } from "../../Components/Shared/Shared";
 
 const LoginSchema = zod.object({
   email: zod.string().email("Please enter a valid email address").nonempty("Email is required"),
@@ -33,8 +32,8 @@ export default function Login() {
   async function sendData(data) {
     setisloading(true);
     toast.promise(
-      axiosInterseptor.post(
-        `/users/signin`,
+      axios.post(
+        `${import.meta.env.VITE_BASE_URL}/users/signin`,
         data
       ),
       {
