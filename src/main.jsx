@@ -27,3 +27,4 @@ createRoot(document.getElementById('root')).render(
   </StrictMode>,
 )
 
+console.log(import.meta.env.VITE_BASE_URL)
