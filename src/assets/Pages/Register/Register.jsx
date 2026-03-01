@@ -55,9 +55,9 @@ export default function Register() {
         pending: "Creating account...",
         success: {
           render({ data }) {
-            localStorage.clear()
+            localStorage.setItem("userdata", JSON.stringify(data.data.data.user))
             localStorage.setItem("token",data.data.data.token)
-            setAuthUserData()
+            setAuthUserData(data.data.data.user)
             setTimeout(() => {
               navigate("/");
             }, 1500);

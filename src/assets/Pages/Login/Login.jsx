@@ -40,8 +40,9 @@ export default function Login() {
         pending: "Signing in...",
         success: {
           render({ data }) {
-            localStorage.clear()
+            localStorage.removeItem("userdata")
             localStorage.setItem("userdata", JSON.stringify(data.data.data.user))
+            localStorage.removeItem("token")
             localStorage.setItem("token", data.data.data.token)
             setAuthUserData()
             setTimeout(() => {

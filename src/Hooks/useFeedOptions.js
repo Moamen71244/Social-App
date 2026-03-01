@@ -12,7 +12,7 @@ import { axiosInterseptor } from "../assets/Components/Shared/Shared"
     }
   
    const {data,isLoading,refetch} =  useQuery({
-      queryKey:["posts",active],
+      queryKey:["posts",active,localStorage.getItem("userdata")],
       queryFn:()=>{
         return getPosts(active)
       },

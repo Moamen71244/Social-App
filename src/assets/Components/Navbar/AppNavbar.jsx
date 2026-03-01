@@ -76,7 +76,7 @@ export default function AppNavbar() {
             {isDarkMode ? <Sun1 size="20" variant="Bold" /> : <Moon size="20" variant="Bold" />}
           </Button>
 
-          {userData && (
+          {userData ? (
             <Dropdown placement="bottom-end">
               <DropdownTrigger>
                 <Avatar
@@ -108,8 +108,9 @@ export default function AppNavbar() {
                   color="danger" 
                   className="text-danger"
                   onClick={() => {
-                    localStorage.clear("userdata");
-                    setAuthUserData(null);
+                    // setAuthUserData(null);
+                    localStorage.removeItem("userdata");
+                    localStorage.removeItem("token")
                     navigate("/login");
                   }}
                 >
@@ -117,7 +118,13 @@ export default function AppNavbar() {
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
-          ) }
+          ) : (
+            <NavbarItem>
+              <Button as={Link} color="primary" to="/register" variant="shadow" size="sm" className="font-bold">
+                Join Now
+              </Button>
+            </NavbarItem>
+          )}
         </NavbarContent>
 
         <NavbarMenu className="glass-card pt-6">

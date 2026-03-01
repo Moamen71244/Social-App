@@ -38,7 +38,7 @@ export default function Home() {
       toast.success(message);
       reset();
       setPostImage(null);
-      queryClient.invalidateQueries({ queryKey: ["posts", active] });
+      queryClient.invalidateQueries({ queryKey: ["posts", active,localStorage.getItem("userdata")] });
     }
   });
 

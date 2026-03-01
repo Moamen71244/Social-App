@@ -41,7 +41,7 @@ export default function PostCard({ postData, inPosts = true, active }) {
     const myform = new FormData();
     myform.append("body", editedBody);
     axiosInterseptor.put(`/posts/${_id}`, myform).then(() => {
-      queryClient.invalidateQueries({ queryKey: ["posts", active] });
+      queryClient.invalidateQueries({ queryKey: ["posts", active,localStorage.getItem("userdata")] });
     });
     setIsEditing(false);
   };
@@ -49,7 +49,7 @@ export default function PostCard({ postData, inPosts = true, active }) {
   const handleDelete = () => {
     axiosInterseptor.delete(`/posts/${postData.id || _id}`).then((data) => {
       toast.success(data.message);
-      queryClient.invalidateQueries({ queryKey: ["posts", active] });
+      queryClient.invalidateQueries({ queryKey: ["posts", active,localStorage.getItem("userdata")] });
     });
   };
 
