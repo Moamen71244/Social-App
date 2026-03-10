@@ -1,16 +1,39 @@
-# React + Vite
+# Social App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern social media web application that allows users to create accounts, share posts, interact with others, and explore content in a clean and responsive interface.
 
-Currently, two official plugins are available:
+Built using modern web technologies to provide a smooth user experience and scalable architecture.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- User authentication (Login / Register)
+- Create and share posts
+- Like and interact with posts
+- Responsive UI for mobile and desktop
+- Modern component-based architecture
+- Clean and maintainable code structure
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+Frontend:
+- React.js
+- Next.js
+- TypeScript
+- Tailwind CSS
+
+Backend / Data:
+- API Integration
+- RESTful services
+
+Tools:
+- Git
+- GitHub
+- Vercel (for deployment)
+
+Live Demo :
+https://social-app-jade-nine.vercel.app
+
